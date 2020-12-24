@@ -43,12 +43,23 @@ public class Driver {
                          //              ChromeOptions chromeOptions = new ChromeOptions();
                          DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
                          desiredCapabilities.setBrowserName("chrome");
-                         URL gridUrl = new URL("http://54.164.122.134:4444/wd/hub");
+                         URL gridUrl = new URL("http://184.72.154.165:4444/wd/hub");
                          driver = new RemoteWebDriver(gridUrl, desiredCapabilities);
                      }catch(Exception e){
                          e.printStackTrace();
                      }
                       break;
+                 case "remote-firefox":
+                     try {
+                         //              ChromeOptions chromeOptions = new ChromeOptions();
+                         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
+                         desiredCapabilities.setBrowserName("firefox");
+                         URL gridUrl = new URL("http://184.72.154.165:4444/wd/hub");
+                         driver = new RemoteWebDriver(gridUrl, desiredCapabilities);
+                     }catch(Exception e){
+                         e.printStackTrace();
+                     }
+                     break;
                   default:
                      throw new RuntimeException("No such a browser yet!");
              }
